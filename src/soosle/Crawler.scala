@@ -5,6 +5,7 @@ import xml.{NodeSeq, Node}
 import tagsoup.TagSoupFactoryAdapter
 import java.net.{URI, URL}
 import collection.mutable.HashSet
+import java.io.FileNotFoundException
 
 class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
@@ -26,40 +27,43 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
   def crawl() {
     for (i <- 0 until depth) {
       println("Depth=" + depth)
-      _crawl(pages.toList)  
+      _crawl(pages.toList, new HashSet[String]())  
     }
   }
 
-  def _crawl(pages:List[String]) {
+  def _crawl(pages:List[String], seenPages:HashSet[String]) {
     println("Unprocessed pages=" + pages.size)
-    if (pages.size == 0)
-      return
+    if (pages.size == 0) return
 
     val currentPage = pages.head
+    seenPages += currentPage
     var newPages = new HashSet[String]()
 
     // Add the current page to the index
-    val currentPageUri = new URI(currentPage)
-    val rootNode = getRootNodeOfPage(currentPageUri)
-    addToIndex(currentPage, rootNode)
-    // Process the links appear on the current page
-    val links = rootNode \\ "a"
+    try {
+      val currentPageUri = new URI(currentPage)
+      val rootNode = getRootNodeOfPage(currentPageUri)
+      addToIndex(currentPage, rootNode)
+      // Process the links appear on the current page
+      val links = rootNode \\ "a"
 
-    links.filter(link=>link.attribute("href") != None).foreach(link=>{
-      val rel:String = (link \ "@href").text
-      val newPageUri = currentPageUri.resolve(rel).toString
-      if (!isIndexed(newPageUri))
-        newPages += newPageUri
-      addLinkRef(currentPage, newPageUri, link.text)
-    })
-    commit()
+      links.filter(link=>link.attribute("href") != None).foreach(link=>{
+        val rel:String = (link \ "@href").text
+        val newPageUri = currentPageUri.resolve(rel).toString
+        if (!isIndexed(newPageUri))
+          newPages += newPageUri
+        addLinkRef(currentPage, newPageUri, link.text)
+      })
+      commit()
 
-    newPages ++= pages - currentPage
-    _crawl(newPages.toList)
+      // XXX: is there a more succinct way?
+      newPages ++= pages
+      newPages --= seenPages
+    } catch {
+      case e:FileNotFoundException => println(e.getMessage)
+    }
+    _crawl(newPages.toList, seenPages)
   }
-
-
-
 
   private def getRootNodeOfPage(uri:URI):Node = {
     val p = new TagSoupFactoryAdapter
