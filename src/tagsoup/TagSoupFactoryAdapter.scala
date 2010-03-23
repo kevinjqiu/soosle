@@ -61,7 +61,7 @@ class TagSoupFactoryAdapter extends FactoryAdapter {
 
   def createProcInstr(target:String, data:String) = Nil
 
-  override def loadXML(source:InputSource) = {
+  def loadXML(source:InputSource) = {
     val parser: SAXParser = parserFactory.newSAXParser
     scopeStack.push(TopScope)
     parser.parse(source, this)

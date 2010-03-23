@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager" verified="true">
-    <list default="true" readonly="true" id="650dba6e-94d2-49f2-a008-02444b819bb9" name="Default" comment="">
+    <list default="true" readonly="true" id="650dba6e-94d2-49f2-a008-02444b819bb9" name="Default" comment="continue learning scala">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soosle.iws" afterPath="$PROJECT_DIR$/soosle.iws" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -68,8 +68,8 @@
       <property name="field_breakpoints_groupByClasses" value="true" />
       <property name="method_breakpoints_groupByClasses" value="true" />
       <property name="exception_breakpoints_viewId" value="TABLE" />
-      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="exception_breakpoints_groupByClasses" value="true" />
+      <property name="field_breakpoints_viewId" value="TABLE" />
       <property name="method_breakpoints_groupByMethods" value="false" />
     </ui_properties>
   </component>
@@ -79,19 +79,37 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Crawler.scala" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Crawler.scala" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="143" selection-start="1864" selection-end="1864" vertical-scroll-proportion="-618.0">
+            <state line="56" column="20" selection-start="1623" selection-end="1875" vertical-scroll-proportion="0.39426523">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Soosle.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="TagSoupFactoryAdapter.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="59" column="43" selection-start="2487" selection-end="2487" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Soosle.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="44" selection-start="220" selection-end="220" vertical-scroll-proportion="0.29881155">
+            <state line="9" column="28" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="soosle.iws" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/soosle.iws">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="17" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -105,6 +123,7 @@
     </FindUsagesManager>
   </component>
   <component name="Git.Settings">
+    <option name="GIT_EXECUTABLE" value="C:\Git\bin\git.exe" />
     <option name="PREVIOUS_COMMIT_AUTHORS">
       <array>
         <option value="kevin.jing.qiu@gmail.com" />
@@ -114,10 +133,11 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala" />
         <option value="$PROJECT_DIR$/README" />
-        <option value="$PROJECT_DIR$/src/soosle/Crawler.scala" />
         <option value="$PROJECT_DIR$/src/soosle/Soosle.scala" />
+        <option value="$PROJECT_DIR$/soosle.iws" />
+        <option value="$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala" />
+        <option value="$PROJECT_DIR$/src/soosle/Crawler.scala" />
       </list>
     </option>
   </component>
@@ -173,14 +193,16 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="Favorites" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="soosle" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -210,24 +232,26 @@
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Favorites" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="recentsLimit" value="5" />
-    <property name="options.lastSelected" value="reference.settingsdialog.IDE.editor.colors.Font" />
+    <property name="options.lastSelected" value="com.intellij.openapi.vcs.configurable.VcsManagerConfigurable$4" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="options.searchVisible" value="true" />
     <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="RunManager" selected="Application.Soosle">
     <configuration default="false" name="Soosle" type="Application" factoryName="Application" temporary="true">
@@ -408,7 +432,7 @@
     <option name="DETECT_NESTED_COPIES" value="false" />
     <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
     <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
-    <configuration useDefault="true">$PROJECT_DIR$/../../.subversion</configuration>
+    <configuration useDefault="true">C:\Documents and Settings\kevin.jingqiu\Application Data\Subversion</configuration>
     <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
     <supportedVersion>125</supportedVersion>
   </component>
@@ -433,22 +457,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1400" height="999" extended-state="0" />
-    <editor active="true" />
+    <frame x="48" y="27" width="1141" height="938" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23832336" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23743719" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.09328358" sideWeight="0.74610776" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16298343" sideWeight="0.75376886" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24550898" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.2437186" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -497,43 +521,65 @@
         <state line="2" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.08477842" />
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../learnScala/lib/scala-library.jar!/scala/Option.class">
+    <entry file="file://$PROJECT_DIR$/soosle.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../learnScala/lib/scala-library.jar!/scala/List.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../learnScala/lib/scala-library.jar!/scala/Iterator.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="27" selection-start="955" selection-end="955" vertical-scroll-proportion="0.76521736" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="0" selection-start="1794" selection-end="1794" vertical-scroll-proportion="0.11092437" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="143" selection-start="1864" selection-end="1864" vertical-scroll-proportion="-618.0">
+        <state line="18" column="17" selection-start="979" selection-end="979" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../learnScala/lib/scala-library.jar!/scala/Predef.class">
+    <entry file="jar://$PROJECT_DIR$/../../.IntelliJIdea90/config/plugins/Scala/lib/scala-library.jar!/scala/xml/factory/XMLLoader.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="6" selection-start="1680" selection-end="1680" vertical-scroll-proportion="0.33333334">
+        <state line="1" column="6" selection-start="32" selection-end="32" vertical-scroll-proportion="0.035842296">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Java/jdk1.6_18/src.zip!/org/xml/sax/InputSource.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="13" selection-start="2414" selection-end="2414" vertical-scroll-proportion="-2.5940766">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.IntelliJIdea90/config/plugins/Scala/lib/scala-library.jar!/scala/xml/parsing/FactoryAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="6" selection-start="1208" selection-end="1223" vertical-scroll-proportion="0.4623656">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="59" column="43" selection-start="2487" selection-end="2487" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="44" selection-start="220" selection-end="220" vertical-scroll-proportion="0.29881155">
+        <state line="9" column="28" selection-start="222" selection-end="222" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.IntelliJIdea90/config/plugins/Scala/lib/scala-library.jar!/scala/package.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="7" selection-start="156" selection-end="156" vertical-scroll-proportion="0.108499095">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/../../.IntelliJIdea90/config/plugins/Scala/lib/scala-library.jar!/scala/xml/NodeSeq.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="6" selection-start="450" selection-end="450" vertical-scroll-proportion="0.17562725">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="56" column="20" selection-start="1623" selection-end="1875" vertical-scroll-proportion="0.39426523">
           <folding />
         </state>
       </provider>

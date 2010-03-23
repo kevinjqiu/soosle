@@ -3,10 +3,8 @@ package soosle
 import org.xml.sax.InputSource
 import xml.{NodeSeq, Node}
 import tagsoup.TagSoupFactoryAdapter
-import java.net.{URI, URL}
-import collection.mutable.HashSet
-import java.io.FileNotFoundException
-import scala.collection.mutable.Set
+import java.net.URI
+import collection.mutable.{Set,HashSet}
 
 class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
@@ -16,7 +14,6 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
   def addLinkRef(from:String, to:String, linkText:String) {
     println("Adding link reference from '%s' to '%s' with link text '%s'".format(from, to, linkText))
-    
   }
 
   def commit() {
@@ -26,13 +23,28 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
   def isIndexed(uri:String):Boolean = false
 
   def crawl() {
+    val linkFoundHandler = (newPages:Set[String], currentPageUri:URI, link:Node) => {
+      val rel:String = (link \ "@href").text
+      val newPageUri = currentPageUri.resolve(rel).toString
+      if (!isIndexed(newPageUri))
+        newPages += newPageUri
+      addLinkRef(currentPageUri.toString, newPageUri, link.text)
+    }
+
+    val errorHandler = (e:Exception) => {
+      println(e)
+    }
+
     for (i <- 0 until depth) {
       println("Depth=" + depth)
-      _crawl(pages.toList, new HashSet[String]())  
+      _crawl(pages.toList, new HashSet[String](), linkFoundHandler, errorHandler)  
     }
   }
 
-  def _crawl(pages:List[String], seenPages:HashSet[String]) {
+  def _crawl(pages:List[String],
+             seenPages:Set[String],
+             linkFoundHandler:(Set[String],URI,Node)=>Unit,
+             errorHandler:Exception=>Unit) {
     println("Unprocessed pages=" + pages.size)
     if (pages.size == 0) return
 
@@ -50,28 +62,26 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
       // XXX: Add the condition @href!=None in the XPath itself? How?
       links.filter(link=>link.attribute("href") != None).foreach(link=>{
-        val rel:String = (link \ "@href").text
-        val newPageUri = currentPageUri.resolve(rel).toString
-        if (!isIndexed(newPageUri))
-          newPages += newPageUri
-        addLinkRef(currentPage, newPageUri, link.text)
+        linkFoundHandler(newPages, currentPageUri, link)
       })
       commit()
 
-      // XXX: if in the above line where
-      // var newPages = new HashSet[String](),
-      // the following line will cause a compiler error
-      // but if I indicate the type of newPages explicitly
-      // using var newPages:Set[String] = new HashSet(),
-      // it passes the compiler.
+      /*
+        XXX: if in the above line where
+        var newPages = new HashSet[String](),
+        the following line will cause a compiler error
+        but if I indicate the type of newPages explicitly
+        using var newPages:Set[String] = new HashSet(),
+        it passes the compiler.
+        otherwise, I'll have to use the following two statements
+        newPages ++= pages
+        newPages --= seenPages
+      */
       newPages = newPages ++ pages -- seenPages
-      // otherwise, I'll have to use the following two statements
-      // newPages ++= pages
-      // newPages --= seenPages
     } catch {
-      case e:FileNotFoundException => println(e.getMessage)
+      case e:Exception => errorHandler(e)
     }
-    _crawl(newPages.toList, seenPages)
+    _crawl(newPages.toList, seenPages, linkFoundHandler, errorHandler)
   }
 
   private def getRootNodeOfPage(uri:URI):Node = {
