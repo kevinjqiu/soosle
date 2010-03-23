@@ -1,2 +1,8 @@
+This is a very simple and basic search engine written in Scala adapted from Chapter 4 of the book "Programming Collective Intelligence"
+
+
+
 Dependencies:
 - TagSoup 1.2
+- db4o Java 5 binding
+

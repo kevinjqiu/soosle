@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="650dba6e-94d2-49f2-a008-02444b819bb9" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soosle.iws" afterPath="$PROJECT_DIR$/soosle.iws" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/soosle/models/Link.scala" afterPath="$PROJECT_DIR$/src/soosle/models/Link.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/soosle/Crawler.scala" afterPath="$PROJECT_DIR$/src/soosle/Crawler.scala" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="soosle.iws" />
@@ -81,10 +80,19 @@
   <component name="FileColors" enabled="true" enabledForTabs="true" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Crawler.scala" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="Crawler.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="55" selection-start="728" selection-end="728" vertical-scroll-proportion="1.3092551">
+            <state line="33" column="41" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.09029345">
               <folding />
             </state>
           </provider>
@@ -111,7 +119,7 @@
       <file leaf-file-name="soosle.iws" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/soosle.iws">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="17" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
+            <state line="4" column="17" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -136,7 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/README" />
         <option value="$PROJECT_DIR$/soosle.iws" />
         <option value="$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala" />
         <option value="$PROJECT_DIR$/src/soosle/model/Link.scala" />
@@ -147,6 +154,7 @@
         <option value="$PROJECT_DIR$/src/soosle/models/WordLocation.scala" />
         <option value="$PROJECT_DIR$/src/soosle/models/Link.scala" />
         <option value="$PROJECT_DIR$/src/soosle/Crawler.scala" />
+        <option value="$PROJECT_DIR$/README" />
       </list>
     </option>
   </component>
@@ -526,8 +534,8 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2" y="187" width="1141" height="807" extended-state="0" />
-    <editor active="true" />
+    <frame x="32" y="565" width="1141" height="807" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -539,7 +547,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16298343" sideWeight="0.7293233" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.16298343" sideWeight="0.7293233" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26015037" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -560,7 +568,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="added db support" />
+    <option name="LAST_COMMIT_MESSAGE" value="link finished" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -578,6 +586,7 @@
     <MESSAGE value="continue learning scala" />
     <MESSAGE value="commit works?" />
     <MESSAGE value="added db support" />
+    <MESSAGE value="link finished" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -587,11 +596,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="28" selection-end="28" vertical-scroll-proportion="0.08477842" />
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/../../.IntelliJIdea90/config/plugins/Scala/lib/scala-library.jar!/scala/xml/factory/XMLLoader.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="1" column="6" selection-start="32" selection-end="32" vertical-scroll-proportion="0.035842296" />
@@ -626,14 +630,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/soosle.iws">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="17" selection-start="133" selection-end="133" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="40" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+        <state line="4" column="17" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -664,9 +661,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="40" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="55" selection-start="728" selection-end="728" vertical-scroll-proportion="1.3092551">
+        <state line="33" column="41" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.09029345">
           <folding />
         </state>
       </provider>
