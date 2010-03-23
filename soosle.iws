@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="650dba6e-94d2-49f2-a008-02444b819bb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README" afterPath="$PROJECT_DIR$/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/soosle/Soosle.scala" afterPath="$PROJECT_DIR$/src/soosle/Soosle.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soosle.iws" afterPath="$PROJECT_DIR$/soosle.iws" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/soosle/Searcher.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/soosle/NeedsDbConnection.scala" />
     </list>
     <ignored path=".idea/workspace.xml" />
     <ignored path="soosle.iws" />
@@ -83,25 +85,25 @@
       <file leaf-file-name="Crawler.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="41" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+            <state line="15" column="0" selection-start="494" selection-end="711" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/README">
+      <file leaf-file-name="Searcher.scala" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/soosle/Searcher.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.09029345">
+            <state line="13" column="25" selection-start="448" selection-end="448" vertical-scroll-proportion="0.5664488">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="WordLocation.scala" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/soosle/models/WordLocation.scala">
+      <file leaf-file-name="NeedsDbConnection.scala" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/soosle/NeedsDbConnection.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="35" selection-start="58" selection-end="58" vertical-scroll-proportion="0.0">
+            <state line="11" column="2" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -110,16 +112,7 @@
       <file leaf-file-name="Soosle.scala" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="40" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="soosle.iws" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/soosle.iws">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="17" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
+            <state line="10" column="36" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -147,7 +140,6 @@
         <option value="$PROJECT_DIR$/soosle.iws" />
         <option value="$PROJECT_DIR$/src/tagsoup/TagSoupFactoryAdapter.scala" />
         <option value="$PROJECT_DIR$/src/soosle/model/Link.scala" />
-        <option value="$PROJECT_DIR$/src/soosle/Soosle.scala" />
         <option value="$PROJECT_DIR$/src/soosle/models/PageURL.scala" />
         <option value="$PROJECT_DIR$/src/soosle/models.scala" />
         <option value="$PROJECT_DIR$/src/soosle/models/Word.scala" />
@@ -155,6 +147,9 @@
         <option value="$PROJECT_DIR$/src/soosle/models/Link.scala" />
         <option value="$PROJECT_DIR$/src/soosle/Crawler.scala" />
         <option value="$PROJECT_DIR$/README" />
+        <option value="$PROJECT_DIR$/src/soosle/NeedsDbConnection.scala" />
+        <option value="$PROJECT_DIR$/src/soosle/Soosle.scala" />
+        <option value="$PROJECT_DIR$/src/soosle/Searcher.scala" />
       </list>
     </option>
   </component>
@@ -534,7 +529,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="32" y="565" width="1141" height="807" extended-state="0" />
+    <frame x="55" y="146" width="1141" height="807" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32934132" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -568,7 +563,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="link finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="added readme" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -587,6 +582,7 @@
     <MESSAGE value="commit works?" />
     <MESSAGE value="added db support" />
     <MESSAGE value="link finished" />
+    <MESSAGE value="added readme" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -628,13 +624,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/soosle.iws">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="17" selection-start="243" selection-end="243" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/soosle/models/PageURL.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="6" selection-start="29" selection-end="29" vertical-scroll-proportion="0.05263158">
@@ -661,23 +650,44 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
+    <entry file="file://$PROJECT_DIR$/README">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="40" selection-start="142" selection-end="142" vertical-scroll-proportion="0.0">
+        <state line="8" column="0" selection-start="190" selection-end="190" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/soosle.iws">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="17" selection-start="243" selection-end="243" vertical-scroll-proportion="0.045146726">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/soosle/Crawler.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="41" selection-start="850" selection-end="850" vertical-scroll-proportion="0.0">
+        <state line="15" column="0" selection-start="494" selection-end="711" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README">
+    <entry file="file://$PROJECT_DIR$/src/soosle/Soosle.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="137" selection-end="137" vertical-scroll-proportion="0.09029345">
+        <state line="10" column="36" selection-start="308" selection-end="308" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/soosle/NeedsDbConnection.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="2" selection-start="188" selection-end="188" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/soosle/Searcher.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="25" selection-start="448" selection-end="448" vertical-scroll-proportion="0.5664488">
           <folding />
         </state>
       </provider>
