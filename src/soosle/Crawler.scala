@@ -1,48 +1,84 @@
 package soosle
 
+import soosle.models.{WordLocation, PageURL}
 import org.xml.sax.InputSource
 import xml.{NodeSeq, Node}
 import tagsoup.TagSoupFactoryAdapter
 import java.net.URI
 import collection.mutable.{Set,HashSet}
+import com.db4o.{Db4oEmbedded, ObjectContainer}
 
 class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
+  val ignored = Set("the", "of", "to", "and", "a", "in", "is", "it", "")
+  
+  var connection = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration, dbname)
 
-  def addToIndex(url:String, rootNode:Node) {
-    println("Adding the page '%s' to index".format(url))
+  def withConnection(op:ObjectContainer=>Unit) {
+
+    try {
+      op(connection)
+      connection.commit
+    } finally {
+      connection.close
+    }
+    
   }
 
   def addLinkRef(from:String, to:String, linkText:String) {
     println("Adding link reference from '%s' to '%s' with link text '%s'".format(from, to, linkText))
   }
 
-  def commit() {
-    println("Committing changes")
-  }
-
-  def isIndexed(uri:String):Boolean = false
-
   def crawl() {
-    val linkFoundHandler = (newPages:Set[String], currentPageUri:URI, link:Node) => {
-      val rel:String = (link \ "@href").text
-      val newPageUri = currentPageUri.resolve(rel).toString
-      if (!isIndexed(newPageUri))
-        newPages += newPageUri
-      addLinkRef(currentPageUri.toString, newPageUri, link.text)
-    }
 
-    val errorHandler = (e:Exception) => {
-      println(e)
-    }
+    withConnection {
+      dbConn => {
+        // Now we have connection object
+        // that's visible to the closures here
+        
+        /**
+         * Is the URL indexed?
+         */
+        def isIndexed(url:String) = dbConn.queryByExample(new PageURL(url)).size != 0
 
-    for (i <- 0 until depth) {
-      println("Depth=" + depth)
-      _crawl(pages.toList, new HashSet[String](), linkFoundHandler, errorHandler)  
+        /**
+         * Index the URL its content
+         */
+        val addToIndex = (url:String, rootNode:Node) => {
+          if (isIndexed(url)) return
+
+          dbConn.store(new PageURL(url))
+
+          val text = extractText(rootNode)
+          val words = text.split("""\W*""").filterNot(ignored.contains(_)).map(_.toLowerCase)
+
+          var wordLoc = 0
+          words.foreach(word=>{
+            dbConn.store(new WordLocation(word, url, wordLoc))
+            wordLoc += 1
+          })
+
+        }
+
+        val linkFoundHandler = (newPages:Set[String], currentPageUri:URI, link:Node) => {
+          val rel:String = (link \ "@href").text
+          val newPageUri = currentPageUri.resolve(rel).toString
+          if (!isIndexed(newPageUri))
+            newPages += newPageUri
+          addLinkRef(currentPageUri.toString, newPageUri, link.text)
+        }
+
+        for (i <- 0 until depth) {
+          println("Depth=" + depth)
+          _crawl(pages.toList, new HashSet[String](),
+            addToIndex, linkFoundHandler, (e:Exception) => println(e))
+        }
+      }
     }
   }
 
   def _crawl(pages:List[String],
              seenPages:Set[String],
+             newPageFoundHandler:(String,Node)=>Unit,           
              linkFoundHandler:(Set[String],URI,Node)=>Unit,
              errorHandler:Exception=>Unit) {
     println("Unprocessed pages=" + pages.size)
@@ -56,7 +92,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
     try {
       val currentPageUri = new URI(currentPage)
       val rootNode = getRootNodeOfPage(currentPageUri)
-      addToIndex(currentPage, rootNode)
+      newPageFoundHandler(currentPage, rootNode)
       // Process the links appear on the current page
       val links = rootNode \\ "a"
 
@@ -64,7 +100,6 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
       links.filter(link=>link.attribute("href") != None).foreach(link=>{
         linkFoundHandler(newPages, currentPageUri, link)
       })
-      commit()
 
       /*
         XXX: if in the above line where
@@ -81,7 +116,21 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
     } catch {
       case e:Exception => errorHandler(e)
     }
-    _crawl(newPages.toList, seenPages, linkFoundHandler, errorHandler)
+    _crawl(newPages.toList, seenPages, newPageFoundHandler, linkFoundHandler, errorHandler)
+  }
+
+  private def extractText(node:Node):String = {
+    val text = node.text
+    if (text == Nil) {
+      var retval:List[String] = List()
+      node.child.foreach(child=>{
+
+        retval = extractText(child) :: retval
+      })
+      retval.mkString("\n")
+    } else {
+      text.trim 
+    }
   }
 
   private def getRootNodeOfPage(uri:URI):Node = {

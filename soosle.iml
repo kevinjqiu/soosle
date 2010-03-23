@@ -33,6 +33,7 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="library" name="db4o" level="application" />
   </component>
 </module>
 
