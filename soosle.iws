@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager" verified="true">
     <list default="true" readonly="true" id="650dba6e-94d2-49f2-a008-02444b819bb9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/soosle/Crawler.scala" afterPath="$PROJECT_DIR$/src/soosle/Crawler.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/soosle/Soosle.scala" afterPath="$PROJECT_DIR$/src/soosle/Soosle.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/soosle.iws" afterPath="$PROJECT_DIR$/soosle.iws" />
     </list>
     <ignored path=".idea/workspace.xml" />
@@ -469,7 +467,7 @@
     <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
     <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="true" />
     <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
-    <option name="LAST_COMMIT_MESSAGE" value="infinite loop problem solved" />
+    <option name="LAST_COMMIT_MESSAGE" value="continue learning scala" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
@@ -484,6 +482,7 @@
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
     <MESSAGE value="running into infinite loop" />
     <MESSAGE value="infinite loop problem solved" />
+    <MESSAGE value="continue learning scala" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
