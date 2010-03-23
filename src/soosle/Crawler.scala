@@ -1,6 +1,6 @@
 package soosle
 
-import soosle.models.{WordLocation, PageURL}
+import models.{Link, WordLocation, PageURL}
 import org.xml.sax.InputSource
 import xml.{NodeSeq, Node}
 import tagsoup.TagSoupFactoryAdapter
@@ -18,14 +18,12 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
     try {
       op(connection)
       connection.commit
+    } catch {
+      case e:Exception => e.printStackTrace
     } finally {
       connection.close
     }
     
-  }
-
-  def addLinkRef(from:String, to:String, linkText:String) {
-    println("Adding link reference from '%s' to '%s' with link text '%s'".format(from, to, linkText))
   }
 
   def crawl() {
@@ -34,28 +32,27 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
       dbConn => {
         // Now we have connection object
         // that's visible to the closures here
-        
-        /**
-         * Is the URL indexed?
-         */
         def isIndexed(url:String) = dbConn.queryByExample(new PageURL(url)).size != 0
 
-        /**
-         * Index the URL its content
-         */
+        def addLinkRef(from:String, to:String, linkText:String) {
+          dbConn.store(new Link(from, to, linkText))
+        }
+
         val addToIndex = (url:String, rootNode:Node) => {
-          if (isIndexed(url)) return
+          if (isIndexed(url))
+            false
 
           dbConn.store(new PageURL(url))
 
           val text = extractText(rootNode)
-          val words = text.split("""\W*""").filterNot(ignored.contains(_)).map(_.toLowerCase)
+          val words = text.split("""\W+""").filterNot(ignored.contains(_)).map(_.toLowerCase)
 
           var wordLoc = 0
           words.foreach(word=>{
             dbConn.store(new WordLocation(word, url, wordLoc))
             wordLoc += 1
           })
+          true
 
         }
 
@@ -70,7 +67,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
         for (i <- 0 until depth) {
           println("Depth=" + depth)
           _crawl(pages.toList, new HashSet[String](),
-            addToIndex, linkFoundHandler, (e:Exception) => println(e))
+            addToIndex, linkFoundHandler, (e:Exception) => e.printStackTrace)
         }
       }
     }
@@ -78,7 +75,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
   def _crawl(pages:List[String],
              seenPages:Set[String],
-             newPageFoundHandler:(String,Node)=>Unit,           
+             newPageFoundHandler:(String,Node)=>Boolean,           
              linkFoundHandler:(Set[String],URI,Node)=>Unit,
              errorHandler:Exception=>Unit) {
     println("Unprocessed pages=" + pages.size)
@@ -123,10 +120,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
     val text = node.text
     if (text == Nil) {
       var retval:List[String] = List()
-      node.child.foreach(child=>{
-
-        retval = extractText(child) :: retval
-      })
+      node.child.foreach(child=> retval = extractText(child) :: retval)
       retval.mkString("\n")
     } else {
       text.trim 
