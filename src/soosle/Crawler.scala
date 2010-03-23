@@ -6,6 +6,7 @@ import tagsoup.TagSoupFactoryAdapter
 import java.net.{URI, URL}
 import collection.mutable.HashSet
 import java.io.FileNotFoundException
+import scala.collection.mutable.Set
 
 class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
@@ -37,7 +38,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
 
     val currentPage = pages.head
     seenPages += currentPage
-    var newPages = new HashSet[String]()
+    var newPages:Set[String] = new HashSet()
 
     // Add the current page to the index
     try {
@@ -47,6 +48,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
       // Process the links appear on the current page
       val links = rootNode \\ "a"
 
+      // XXX: Add the condition @href!=None in the XPath itself? How?
       links.filter(link=>link.attribute("href") != None).foreach(link=>{
         val rel:String = (link \ "@href").text
         val newPageUri = currentPageUri.resolve(rel).toString
@@ -56,9 +58,16 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
       })
       commit()
 
-      // XXX: is there a more succinct way?
-      newPages ++= pages
-      newPages --= seenPages
+      // XXX: if in the above line where
+      // var newPages = new HashSet[String](),
+      // the following line will cause a compiler error
+      // but if I indicate the type of newPages explicitly
+      // using var newPages:Set[String] = new HashSet(),
+      // it passes the compiler.
+      newPages = newPages ++ pages -- seenPages
+      // otherwise, I'll have to use the following two statements
+      // newPages ++= pages
+      // newPages --= seenPages
     } catch {
       case e:FileNotFoundException => println(e.getMessage)
     }
