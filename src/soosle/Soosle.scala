@@ -8,7 +8,7 @@ object Soosle {
 //    crawler.crawl
 
     val searcher = new Searcher("soosle.db")
-    searcher.query("language").foreach {
+    searcher.query("functional programming").foreach {
       result => {
         println("" + result.word + " found in page " + result.pageUrl + ":" + result.location)
       }

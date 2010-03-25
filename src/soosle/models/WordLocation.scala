@@ -1,3 +1,3 @@
 package soosle.models
 
-class WordLocation(val word:String, val pageUrl:String, location:Int)
+class WordLocation(val word:String, val pageUrl:String, val location:Int)

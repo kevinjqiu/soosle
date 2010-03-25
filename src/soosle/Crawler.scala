@@ -45,7 +45,7 @@ class Crawler(val dbname:String, val pages:Set[String], val depth:Int) {
           dbConn.store(new PageURL(url))
 
           val text = extractText(rootNode)
-          val words = text.split("""\W+""").filterNot(ignored.contains(_)).map(_.toLowerCase)
+          val words = text.split("""\W+""").filter(!ignored.contains(_)).map(_.toLowerCase)
 
           var wordLoc = 0
           words.foreach(word=>{
